@@ -9,11 +9,12 @@
     <div>
         <h1><a href="/">Lou's Blog</a></h1>
     </div>
-
-    <div>
-        <p>publicado: 28.08.2020, 16:45</p>
-        <h2><a href="">Meu primeiro post</a></h2>
-        <p>Eu não sei o que eu estou fazendo, meu pai.</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a> </h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
